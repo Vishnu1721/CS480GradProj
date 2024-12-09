@@ -1,0 +1,298 @@
+/* Global styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f1f1f1;
+}
+
+header {
+    background-color: #232f3e;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo {
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #ff9900;
+}
+
+header .search-cart-container {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+header .search-bar input {
+    flex: 1;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    margin-right: -1px;
+    width: 50%;
+}
+
+header .search-bar button {
+    padding: 0.5rem 1rem;
+    background-color: #ff9900;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+header .cart-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+header .cart-icon button {
+    background-color: #ff9900;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+main {
+    display: flex;
+    padding: 1rem 2rem;
+    gap: 2rem;
+}
+
+/* Sidebar styling */
+.sidebar {
+    width: 20%;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
+    margin-bottom: 1rem;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li button {
+    width: 100%;
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: left;
+}
+
+/* Styling for the product section */
+.product-grid {
+    flex: 1;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust grid columns for responsiveness */
+    gap: 1rem;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.product {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    max-height: 350px;
+}
+
+.product img {
+    max-width: 100%;
+    height: 200px; /* Enforce consistent height */
+    object-fit: contain; /* Maintain aspect ratio */
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.product h3 {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    text-align: center;
+}
+
+.product p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+.product button {
+    background-color: #ff9900;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Ensure products and grid layout adjust properly */
+.products-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Cart-specific styles */
+.cart-container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 1rem; /* Add spacing between items */
+    padding: 1rem; /* Add padding for the container */
+    max-width: 800px; /* Center the cart content */
+    margin: 0 auto; /* Center align horizontally */
+    background-color: #f9f9f9; /* Light background for contrast */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+}
+
+.cart-item {
+    background-color: #fff; /* White background for items */
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: flex;
+    flex-direction: column; /* Stack name, price, and button */
+    justify-content: space-between;
+}
+
+.cart-item h3 {
+    font-size: 1.2rem; /* Slightly larger text for item names */
+    margin: 0.5rem 0;
+}
+
+.cart-item p {
+    font-size: 1rem; /* Standard text size for price */
+    margin: 0.5rem 0;
+}
+
+.cart-item button {
+    background-color: #ff9900; /* Highlighted button color */
+    border: none;
+    padding: 0.5rem 1rem; /* Add padding to buttons */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    align-self: flex-end; /* Align button to the right */
+    font-weight: bold; /* Make text stand out */
+}
+
+.cart-summary {
+    margin-top: 2rem; /* Add spacing above the total price */
+    text-align: center; /* Center the total price */
+    font-size: 1.5rem; /* Larger font for emphasis */
+    font-weight: bold; /* Highlight the total */
+    color: #232f3e; /* Darker text color */
+}
+
+.cart-container {
+    overflow-y: auto; /* Allow scrolling if the cart overflows */
+    max-height: calc(100vh - 150px); /* Prevent overflow */
+}
+
+/* For responsiveness */
+@media screen and (max-width: 768px) {
+    .cart-container {
+        padding: 0.5rem; /* Reduce padding on smaller screens */
+    }
+    .cart-item {
+        padding: 0.5rem; /* Reduce item padding */
+    }
+    .cart-summary {
+        font-size: 1.2rem; /* Adjust text size */
+    }
+}
+
+.auth-container {
+    max-width: 400px;
+    margin: 2rem auto;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.auth-container h2 {
+    margin-bottom: 1rem;
+}
+
+.auth-container form input {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.auth-container form button {
+    width: 100%;
+    padding: 0.7rem;
+    background-color: #ff9900;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.auth-container p {
+    margin-top: 1rem;
+}
+
+/* Styling for Order Now Button */
+#order-now-btn {
+    display: block;
+    width: 100%;
+    background-color: #ff9900;
+    color: white;
+    padding: 1rem;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#order-now-btn:hover {
+    background-color: #e68a00;
+}
+
+#order-now-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+
+
